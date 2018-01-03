@@ -1,483 +1,975 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>iServCloud</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>iServCloud</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" type="text/css" href="vendor/plugins/animate/animate.min.css">
+    <!-- Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/skin/default_skin/css/theme.css">
 
-      // Store hash
-      var hash = this.hash;
+    <style>
+        body {
 
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 900, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-  
-  $(window).scroll(function() {
-    $(".slideanim").each(function(){
-      var pos = $(this).offset().top;
-
-      var winTop = $(window).scrollTop();
-        if (pos < winTop + 600) {
-          $(this).addClass("slide");
+            /* color: #ffffff; */
+            /* font-family: 微軟正黑體; */
+            letter-spacing: 3px;
         }
-    });
-  });
-})
-</script>
-  <style>
-  body {
 
-      color: #ffffff;
-	  font-family:微軟正黑體;
-	  letter-spacing: 3px;　
-  }
-  
-  .black{
-  color:#1a1a1a;
-  }
-  
-  
-  .gray
-  {
-  color:#666666;
-  font-size: 15px;
-  }
-  
-  h2 {
-      font-size: 24px;
-      color: #303030;
-      margin-bottom: 30px;
-	  font-weight: 550;
-  }
-  
-  h4 {
-      font-size: 19px;
-      color: #303030;
-	  font-weight: 550;
-  }  
-  
-  .jumbotron {
-      background-image:url("laptop.png");
-	  background-size:cover;
-      padding: 250px 25px;
-      font-family:微軟正黑體;
-  }
-  .container-fluid {
-      padding: 60px 50px;
-  }
-  
-  .bg-blue {
-      background-color: #A1C9DC;
-  }
-    .bg-light {
-      background-color: #CBE1EB;
-	  background-image: url("cloud.png");
-	  background-repeat:no-repeat;
-	  background-position: center right; 
-  }
+        .black {
+            color: #1a1a1a;
+        }
 
-  .logo-small {
-      color: #f4511e;
-      font-size: 50px;
-  }
-  .logo {
-      color: #f4511e;
-      font-size: 200px;
-  }
-  .thumbnail {
-      padding: 0 0 15px 0;
-      border: none;
-      border-radius: 0;
-  }
-  .thumbnail img {
-      width: 100%;
-      height: 100%;
-      margin-bottom: 10px;
-  }
-  .carousel-control.right, .carousel-control.left {
-      background-image: none;
-      color:#29A7E1;
-  }
-  .carousel-indicators li {
-      border-color: #76C7EB;
-  }
-  .carousel-indicators li.active {
-      background-color: #29A7E1;
-  }
-  .item h4 {
-      font-size: 19px;
-      line-height: 1.375em;
-      font-weight: 400;
-      margin: 70px 0;
-  }
-  .item span {
-      font-style: normal;
-  }
-  .panel {
-      border: 1px solid #f4511e; 
-      border-radius:0 !important;
-      transition: box-shadow 0.5s;
-  }
-  .panel:hover {
-      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
-  }
-  .panel-footer .btn:hover {
-      border: 1px solid #f4511e;
-      background-color: #fff !important;
-      color: #f4511e;
-  }
-  .panel-heading {
-      color: #fff !important;
-      background-color: #f4511e !important;
-      padding: 25px;
-      border-bottom: 1px solid transparent;
-      border-top-left-radius: 0px;
-      border-top-right-radius: 0px;
-      border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;
-  }
-  .panel-footer {
-      background-color: white !important;
-  }
-  .panel-footer h3 {
-      font-size: 32px;
-  }
-  .panel-footer h4 {
-      color: #aaa;
-      font-size: 14px;
-  }
-  .panel-footer .btn {
-      margin: 15px 0;
-      background-color: #f4511e;
-      color: #fff;
-  }
-  .navbar {
-      margin-bottom: 0;
-      background-color: #29A7E1;
-      z-index: 9999;
-      border: 0;
-      font-size: 12px !important;
-      line-height: 1.42857143 !important;
-      letter-spacing: 4px;
-      border-radius: 0;
-      font-family: Montserrat, sans-serif;
-  }
-  .navbar li a, .navbar .navbar-brand {
-      color: #fff !important;
-  }
-  .navbar-nav li a:hover, .navbar-nav li.active a {
-      color: #29A7E1 !important;
-      background-color: #fff !important;
-  }
-  .navbar-default .navbar-toggle {
-      border-color: transparent;
-      color: #fff !important;
-  }
-  
-	footer {
-    padding: 25px 0;
-    background-color: #233140;
-	}
-  .slideanim {visibility:hidden;}
-  .slide {
-      animation-name: slide;
-      -webkit-animation-name: slide;
-      animation-duration: 1s;
-      -webkit-animation-duration: 1s;
-      visibility: visible;
-  }
-  @keyframes slide {
-    0% {
-      opacity: 0;
-      transform: translateY(70%);
-    } 
-    100% {
-      opacity: 1;
-      transform: translateY(0%);
-    }
-  }
-  @-webkit-keyframes slide {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(70%);
-    } 
-    100% {
-      opacity: 1;
-      -webkit-transform: translateY(0%);
-    }
-  }
-  @media screen and (max-width: 768px) {
-    .col-sm-4 {
-      text-align: center;
-      margin: 25px 0;
-    }
-    .btn-lg {
-        width: 100%;
-        margin-bottom: 35px;
-    }
-  }
-  @media screen and (max-width: 480px) {
-    .logo {
-        font-size: 150px;
-    }
-  }
-  </style>
+
+        .gray {
+            color: #353535;
+            font-size: 15px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #303030;
+            margin-bottom: 30px;
+            font-weight: 550;
+        }
+
+        h4 {
+            font-size: 19px;
+            color: #303030;
+            font-weight: 550;
+        }
+
+        .jumbotron {
+            background-image: url("laptop.png");
+            background-size: cover;
+            background-position: center center;
+            height: 100%;
+            padding: 250px 25px;
+            font-family: 微軟正黑體;
+        }
+
+        .container-fluid {
+            padding: 96px 50px;
+        }
+
+        .bg-blue {
+            background-color: #A1C9DC;
+        }
+
+        .bg-light {
+            /* background-color: #fff !important; */
+            background-image: url("cloud.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .logo-small {
+            color: #f4511e;
+            font-size: 50px;
+        }
+
+        .logo {
+            color: #f4511e;
+            font-size: 200px;
+        }
+
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 10px;
+        }
+
+        .carousel-control.right,
+        .carousel-control.left {
+            background-image: none;
+            color: #29A7E1;
+        }
+
+        .carousel-indicators li {
+            border-color: #76C7EB;
+        }
+
+        .carousel-indicators li.active {
+            background-color: #29A7E1;
+        }
+
+        .item h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            font-weight: 400;
+            margin: 70px 0;
+        }
+
+        .item span {
+            font-style: normal;
+        }
+
+        .panel {
+            border: 1px solid #f4511e;
+            border-radius: 0 !important;
+            transition: box-shadow 0.5s;
+        }
+
+        .panel:hover {
+            box-shadow: 5px 0px 40px rgba(0, 0, 0, .2);
+        }
+
+        .panel-footer .btn:hover {
+            border: 1px solid #f4511e;
+            background-color: #fff !important;
+            color: #f4511e;
+        }
+
+        .panel-heading {
+            color: #fff !important;
+            background-color: #f4511e !important;
+            padding: 25px;
+            border-bottom: 1px solid transparent;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+
+        .panel-footer {
+            background-color: white !important;
+        }
+
+        .panel-footer h3 {
+            font-size: 32px;
+        }
+
+        .panel-footer h4 {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .panel-footer .btn {
+            margin: 15px 0;
+            background-color: #f4511e;
+            color: #fff;
+        }
+        /* .navbar {
+            margin-bottom: 0;
+            height: 72px;
+            background-color: #666;
+            z-index: 9999;
+            border: 0;
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 4px;
+            border-radius: 0;
+            font-family: Montserrat, sans-serif;
+        }
+
+        .navbar .container {
+            height: 100%;
+        }
+
+        .navbar li a,
+        .navbar .navbar-brand {
+            color: #fff !important;
+        }
+
+        .navbar-nav li a:hover,
+        .navbar-nav li.active a {
+            color: #29A7E1 !important;
+            background-color: #fff !important;
+        }
+
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #fff !important;
+        } */
+
+        .nav.navbar-nav>li {
+            height: 100%;
+        }
+
+        .nav.navbar-nav>li>a {
+            font-size: 14px;
+            height: 100%;
+            max-height: 100%;
+            padding-top: 40px;
+        }
+
+        .jbscroll {
+            position: absolute;
+            width: 100%;
+            font-size: 48px;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+        }
+
+        .jumbotron h1 {
+            color: #fff
+        }
+
+        footer {
+            padding: 25px 0;
+            /* background-color: #233140; */
+        }
+
+        .slideanim {
+            visibility: hidden;
+        }
+
+        .slide {
+            animation-name: slide;
+            -webkit-animation-name: slide;
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+            visibility: visible;
+        }
+
+        .circle {
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 8px solid #ffffff;
+            padding: 5px;
+            background: #3597dc;
+            box-shadow: 0 0 0 1px #b5b5b5;
+        }
+
+        .inner {
+            background-size: 100px auto;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 100%;
+            border-radius: 50%;
+            filter: brightness(250%);
+        }
+
+        .hr_w {
+            border-top: 1px dashed #aaa;
+            margin: 15px;
+        }
+
+        .Services-content h4,
+        .Services-content h2 {
+            color: #fff
+        }
+
+        .tech_info{
+            color: white
+        }
+
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+
+        @-webkit-keyframes slide {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0%);
+            }
+        }
+
+        @media screen and (max-width: 1023px) {
+            #nav_origin {
+                display: none
+            }
+            #nav_toggle {
+                display: initial
+            }
+            #nav_toggle button {
+                height: 96px;
+                width: 64px;
+                font-size: 24px;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .col-sm-4 {
+                text-align: center;
+                margin: 25px 0;
+            }
+            .btn-lg {
+                width: 100%;
+                margin-bottom: 35px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .logo {
+                font-size: 150px;
+            }
+        }
+    </style>
 </head>
+
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-       <a href="#myPage"><img src="nav.png"></a> 
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#Solutions">Solutions</a></li>
-        <li><a href="#Services">Services</a></li>
-        <li><a href="#DCDB">iServDC&DB</a></li>
-        <li><a href="#myCarousel">Customers</a></li>
-        <li><a href="#Contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<div class="jumbotron text-center">
-  <h1><strong>管理及時雨讓商機萌芽</h1> </strong>
-  <p class="black">3分鐘就申辦好，iServCloud解決你的煩惱</p>
-    </div>
-  </form>
-</div>
-
-<!-- Container (About Section) -->
-<div id="Solutions" class="container-fluid row slideanim">
-     <center><h1 class="black"><strong>企業面臨雲端資源管理瓶頸</strong></h1></center><br><br><br>
-    <div class="col-sm-3">
-      <center><img src="pic1.png"></center><br>
-      <h4>實體主機佈署及擴充複雜</h4>
-	  <p class="gray">透過iServCloud實體主機自動化佈署，主機上機櫃開機後自動安裝作業系統及軟體，透過管理介面直接設定，不必一台台辛苦安裝，節省管理人力及成本。</p>
-    </div>
-    <div class="col-sm-3">
-	<center><img src="pic2.png"></center><br>
-      <h4>資源申請到提供完成耗時</h4>
-	   <p class="gray">用戶透過iServCloud自助申請與自動化建立並依需求組合資源，管理者依資源總覽判斷進行審核，彈指之間就自動完成所有環境配置提供雲端資源服務。</p>
-    </div>
-    <div class="col-sm-3">
-    <center> <img src="pic3.png"></center><br>
-      <h4>資源類型多整合管理不易</h4>
-	   <p class="gray">iServCloud的定義套餐式資源組合，簡化申請程序與資源配置預估管理，有效控管企業對外網路IP資源，應用服務型虛擬機組合搭配網站負載平衡，符合多樣應用服務佈署與效能需求。</p>
-    </div>
-	<div class="col-sm-3">
-     <center><img src="pic4.png"></center><br>
-      <h4>資源分派與動態調度困難</h4>
-	   <p class="gray">iServCloud雲端資源分派與動態調度，可依據用戶、虛擬機模板定義虛擬機分派策略，找出最適合的實體伺服器啟用虛擬機，也可以將運行中的模擬機動態遷移到最適合的實體伺服器。</p>
-    </div>
-  </div>
-    </div>
-  </div>
-</div>
-
-<div id="Services" class="container-fluid bg-blue">
-<h1><center><strong>我們提供的服務</strong></center></h1><br><br><br>
-  <div class="row">
-    <div class="col-sm-4">
-      <span><img src="logo.png"></span>
-    </div>
-    <div class="col-sm-8">
-      <h2>特色</h2>
-	  <hr>
-      <h4> 1. 公私有雲的規劃建置</h4><p class="gray">透過部署介面，省略繁雜的安裝程序，減少人為介入，輕鬆達到快速部署及大量佈建。</p>
-	   <h4> 2. 巨量資料的分析儲存</h4><p class="gray"> 利用分散式架構，分散緩衝大量連線與巨量資料；只要維持2/3 以上節點正常運作，所有資料能夠正常存取。</p>
-		<h4> 3. 異質資料的結合查詢</h4><p class="gray">支援多樣化的儲存引擎介接以及保有關聯式資料庫的使用特性，使開發人員與DBA 容易上手及維護。</p>
-		 <h4> 4. 檔案安全的分散儲存</h4><p class="gray">檔案加密切割，並分散至節點，即使其中一個分割被取得也無法被還原。</p>
-    </div>
-  </div>
-</div>
-
-<div id="DCDB" class="container-fluid bg-light">
-  <div class="row">
-    <div class="col-sm-1 col-sm-offset-1">
-      <h2><center><strong>iServDC</strong></center></h2>
-	  </div>
-	  <div class="col-sm-1 col-sm-offset-3">
-      <h2><center><strong>iServDB</strong></center></h2>
-	 </div>
-  </div>
-   <div class="row gray">
-    <div class="col-sm-1">
-	<h4 class="black">概述</h4>
-	</div>
-	<div class="col-sm-4">
-	具備高彈性而易於使用的雲端基礎架構管理平台，具備快速部署、即時監控、彈性擴充的特點。雲端平台可提供虛擬機、外接硬碟、虛擬機備份、虛擬機自動擴展、網站負載平衡、軟體定義網路等各種資源及服務。
-	  </div>
-   <div class="col-sm-4">
-	使用先進穩定的開源資料庫PostgreSQL作為開發基礎，採獨立的Shared Nothing架構設計，支援儲存節點水平擴充，並且保留多項關聯式資料庫特性及既有功能。
-	  </div>
-    </div>
-	<br>
-	 <div class="row gray">
-		    <div class="col-sm-1">
-		<h4 class="black">特色</h4>
-		</div>
-		<div class="col-sm-4">
-		1. 自動化安裝及快速部署</br>
-		2. 圖形化監控系統</br>
-	    3. 彈性系統架構</br>
-		4. 高可用性</br>
-		5. 自助式申請及流程管理</br>
-		6. 虛擬資源智慧化配置</br>
-	 </div>
-	    <div class="col-sm-4">
-		1. 高乘載 (high load capacity)</br>
-		2. 高容錯 (high fault tolerance)</br>
-		3. 高效益 (high performance)</br>
-		4. 易操作 (easy to operate)</br>
-		</div>
-    </div>
-	  </div>
-
-  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-	   <li data-target="#myCarousel" data-slide-to="3"></li>
-	     <li data-target="#myCarousel" data-slide-to="4"></li>
-		   <li data-target="#myCarousel" data-slide-to="5"></li>
-		     <li data-target="#myCarousel" data-slide-to="6"></li>
-			   <li data-target="#myCarousel" data-slide-to="7"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-	<h1 class="black"><strong>我們的顧客</strong></h1>
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-	  <h4><img src="logo_mitaccomm.png">
-       <br>新達電腦股份有限公司<br><br>"採用iServCloud提供軟硬體整合之解決方案，幫助產業快速建立私有雲、
-	   <br>管控內部虛擬資源服務，降低IT部門安裝負擔，提升工作效率。"</h4>
-      </div>
-      <div class="item">
-       <h4><img src="logo_easpnet.jpg">
-	   <br>數位通國際網路股份有限公司<br><br>"使用iServCloud資源管理平台管理客戶虛擬資源，將申請程序化繁為簡，提升資源可用率。
-	   <br>實績：成為我國政府「電腦軟體共同供應契約採購」服務提供商。"</h4>
-      </div>
-      <div class="item">
-        <h4><img src="logo_teema.jpg">
-		<br>台灣區電機電子工業同業公會<br><br>"使用iServCloud管理平台，建立各式雲端服務，提供台灣、日本及中國會員使用，
-	   <br>強化服務效能，增進會員滿意度，降低維運成本，創造最大利益。"</h4>
-      </div>
-	  <div class="item">
-        <h4><img src="logo_isoftstone.png">
-		<br>軟通動力信息技術(集團)有限公司<br><br>"使用iServCloud建置集團內部私有雲服務，提供超過600台虛擬機，供應旗下各子公司
-	   <br>進行專案開發測試及相關服務建置，提升產品開發效率，降低維運負擔，
-	   <br>加速產品上市時間(Time to Market)。"</h4>
-      </div>
-	  <div class="item">
-        <h4>科技服務大樓 CloudDC<br><br>"使用iServCloud管理平台，提升進駐之廠商虛擬資源服務，改善服務品質，
-	   <br>降低IT部門人員配置，提高生產力。"</h4>
-      </div>
-	  <div class="item">
-        <h4><img src="logo_cablesoft.gif">
-		<br>開博科技股份有限公司<br><br>"使用iServCloud管理平台，優化旗下產品Zoom Service，整合既有客戶的管理系統，
-	   <br>縮減維運主機數量約達40%，提升管理效能，降低人力耗能。"</h4>
-      </div>
-	  <div class="item">
-        <h4><img src="logo_01.png">
-		<br>國家發展委員會檔案管理局<br><br>"藉由iServCloud整合全國電子公文交換中心，降低百餘實體機器數量，
-	   <br>減省設備投資，簡化運作流程，提升管理效能。"</h4>
-      </div>
-	  <div class="item">
-        <h4><img src="logo_ylis.gif">
-		<br>正源科技股份有限公司<br><br>"使用iServCloud管理平台，為裕隆集團建置私有雲，提升各部門營運效率並將剩餘資源
-	    <br>做台元科技園區內供有雲服務，降低園區內中小企業IT成本。"</h4>
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
-
-
- 
-
- <!-- Footer -->
-    <footer id="Contact" class="text-center">
-        <div class="footer-above">
-                <div class="row">
-                   <div class="footer-col col-md-4">
-                        <h3>Technical Information</h3>
-                        <p><a href="http://openstack.org/" target='_blank'>OpenStack</a><br><a href="http://postgresql.org/" target='_blank'>PostgreSQL</a></p>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3>Relative Links</h3>                       
-                        <ul class="list-inline">
-                            <li>
-                                <a href="https://twitter.com/iservdb"><img src="twitter.png">   </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3 style=" font-family:Microsoft JhengHei; text-transform: none">Further Information</h3>
-                        <p>contact [at] iServCloud.com</p>
-                    </div>
-                </div>
+    <!-- <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#myPage">
+                    <img src="nav.png">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#Solutions">Solutions</a>
+                    </li>
+                    <li>
+                        <a href="#Services">Services</a>
+                    </li>
+                    <li>
+                        <a href="#DCDB">iServDC&DB</a>
+                    </li>
+                    <li>
+                        <a href="#myCarousel">Customers</a>
+                    </li>
+                    <li>
+                        <a href="#Contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="footer-below">
-                <div class="row">
-                    <div class="col-lg-12">  
-                        Copyright &copy; Innovative DigiTech-Enabled Applications and Services Institute(IDEAS), 
-                              Institute for Information Industry(III)
-                     
+    </nav> -->
+
+    <!-- Start: Header -->
+    <header class="navbar navbar-fixed-top navbar-shadow bg-dark" style="height:96px;">
+        <div class="row">
+            <div class="col-xs-3">
+                <div class="p10 pt20 ml20" style="height:96px;">
+                    <a href="#myPage">
+                        <img src="nav.png">
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-9" id="nav_origin">
+                <ul class="nav navbar-nav navbar-right" style="height:96px;">
+                    <li>
+                        <a href="#Solutions">
+                            <i class="fa fa-lightbulb-o"></i> Solutions</a>
+                    </li>
+                    <li>
+                        <a href="#Services">
+                            <i class="fa fa-compass"></i> Services</a>
+                    </li>
+                    <li>
+                        <a href="#DCDB">
+                            <i class="fa fa-search"></i> iServDC&DB</a>
+                    </li>
+                    <li>
+                        <a href="#myCarousel">
+                            <i class="fa fa-rocket"></i> Customers</a>
+                    </li>
+                    <li>
+                        <a href="#Contact">
+                            <i class="fa fa-coffee"></i> Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-9" id="nav_toggle" hidden>
+                <button type="button" class="btn btn-dark pull-right" id="nav_btn">
+                    <span class="fa fa-list-ul"></span>
+                </button>
+                <!-- <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#Solutions">Solutions</a>
+                        </li>
+                        <li>
+                            <a href="#Services">Services</a>
+                        </li>
+                        <li>
+                            <a href="#DCDB">iServDC&DB</a>
+                        </li>
+                        <li>
+                            <a href="#myCarousel">Customers</a>
+                        </li>
+                        <li>
+                            <a href="#Contact">Contact</a>
+                        </li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </header>
+    <!-- End: Header -->
+
+    <!-- <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#myPage">
+                    <img src="nav.png">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#Solutions">Solutions</a>
+                    </li>
+                    <li>
+                        <a href="#Services">Services</a>
+                    </li>
+                    <li>
+                        <a href="#DCDB">iServDC&DB</a>
+                    </li>
+                    <li>
+                        <a href="#myCarousel">Customers</a>
+                    </li>
+                    <li>
+                        <a href="#Contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav> -->
+
+    <div class="jumbotron text-center">
+        <h1 class="animated animated-shorter fadeIn">
+            <strong>
+                管理及時雨讓商機萌芽
+            </strong>
+        </h1>
+        <p class="black fw600 animated animated-longer fadeIn">3分鐘就申辦好，iServCloud解決你的煩惱</p>
+        <div class="text-center jbscroll animated animated-longer fadeInDown">
+            <i class="fa fa-chevron-circle-down"></i>
+        </div>
+    </div>
+
+    <!-- Container (About Section) -->
+    <div id="Solutions" class="container-fluid row slideanim">
+        <center>
+            <h1 class="black">
+                <strong>企業面臨雲端資源管理瓶頸</strong>
+            </h1>
+        </center>
+        <br>
+        <br>
+        <br>
+        <div class="col-sm-3 text-center p20">
+            <div class="circle">
+                <div class="inner" style="background-image:url('pic1.png')">
+
+                </div>
+            </div>
+            <hr class="hr_w">
+            <h4>實體主機佈署及擴充複雜</h4>
+            <p class="gray text-left">透過iServCloud實體主機自動化佈署，主機上機櫃開機後自動安裝作業系統及軟體，透過管理介面直接設定，不必一台台辛苦安裝，節省管理人力及成本。</p>
+        </div>
+        <div class="col-sm-3 text-center p20">
+            <div class="circle">
+                <div class="inner" style="background-image:url('pic2.png')">
+
+                </div>
+            </div>
+            <hr class="hr_w">
+            <h4>資源申請到提供完成耗時</h4>
+            <p class="gray text-left">用戶透過iServCloud自助申請與自動化建立並依需求組合資源，管理者依資源總覽判斷進行審核，彈指之間就自動完成所有環境配置提供雲端資源服務。</p>
+        </div>
+        <div class="col-sm-3 text-center p20">
+            <div class="circle">
+                <div class="inner" style="background-image:url('pic3.png')">
+
+                </div>
+            </div>
+            <hr class="hr_w">
+            <h4>資源類型多整合管理不易</h4>
+            <p class="gray text-left">iServCloud的定義套餐式資源組合，簡化申請程序與資源配置預估管理，有效控管企業對外網路IP資源，應用服務型虛擬機組合搭配網站負載平衡，符合多樣應用服務佈署與效能需求。</p>
+        </div>
+        <div class="col-sm-3 text-center p20">
+            <div class="circle">
+                <div class="inner" style="background-image:url('pic4.png')">
+
+                </div>
+            </div>
+            <hr class="hr_w">
+            <h4>資源分派與動態調度困難</h4>
+            <p class="gray text-left">iServCloud雲端資源分派與動態調度，可依據用戶、虛擬機模板定義虛擬機分派策略，找出最適合的實體伺服器啟用虛擬機，也可以將運行中的模擬機動態遷移到最適合的實體伺服器。</p>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <div id="Services" class="container-fluid bg-info">
+        <h1>
+            <center>
+                <strong>我們提供的服務</strong>
+            </center>
+        </h1>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-sm-4">
+                <span>
+                    <img src="logo.png">
+                </span>
+            </div>
+            <div class="col-sm-8 Services-content">
+                <h2>特色</h2>
+                <hr>
+                <h4> 1. 公私有雲的規劃建置</h4>
+                <p class="gray fw600">透過部署介面，省略繁雜的安裝程序，減少人為介入，輕鬆達到快速部署及大量佈建。</p>
+                <hr class="hr_w">
+                <h4> 2. 巨量資料的分析儲存</h4>
+                <p class="gray fw600"> 利用分散式架構，分散緩衝大量連線與巨量資料；只要維持2/3 以上節點正常運作，所有資料能夠正常存取。</p>
+                <hr class="hr_w">
+                <h4> 3. 異質資料的結合查詢</h4>
+                <p class="gray fw600">支援多樣化的儲存引擎介接以及保有關聯式資料庫的使用特性，使開發人員與DBA 容易上手及維護。</p>
+                <hr class="hr_w">
+                <h4> 4. 檔案安全的分散儲存</h4>
+                <p class="gray fw600">檔案加密切割，並分散至節點，即使其中一個分割被取得也無法被還原。</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="DCDB" class="container-fluid bg-light">
+        <div class="row slideanim">
+            <div class="col-lg-1">
+
+            </div>
+            <div class="col-lg-4">
+                <div class="p20" style="background:rgba(255, 255,255,0.9);min-height:400px;box-shadow: 0 0 0 1px #b5b5b5;">
+                    <h2>
+                        <center>
+                            <strong class="text-primary">
+                                <i class="fa fa-cloud"></i> iServDC</strong>
+                        </center>
+                    </h2>
+                    <hr class="hr_w">
+                    <p class="gray">具備高彈性而易於使用的雲端基礎架構管理平台，具備快速部署、即時監控、彈性擴充的特點。雲端平台可提供虛擬機、外接硬碟、虛擬機備份、虛擬機自動擴展、網站負載平衡、軟體定義網路等各種資源及服務。</p>
+                    <br/>
+                    <div class="fw600">
+                        1. 自動化安裝及快速部署</br>
+                        2. 圖形化監控系統</br>
+                        3. 彈性系統架構</br>
+                        4. 高可用性</br>
+                        5. 自助式申請及流程管理</br>
+                        6. 虛擬資源智慧化配置</br>
                     </div>
                 </div>
             </div>
+            <div class="col-lg-2">
+
+            </div>
+            <div class="col-lg-4">
+                <div class="p20" style="background:rgba(255, 255,255,0.9);min-height:400px;box-shadow: 0 0 0 1px #b5b5b5;">
+                    <h2>
+                        <center>
+                            <strong class="text-primary">
+                                <i class="fa fa-sitemap"></i> iServDB</strong>
+                        </center>
+                    </h2>
+                    <hr class="hr_w">
+                    <p class="gray">使用先進穩定的開源資料庫PostgreSQL作為開發基礎，採獨立的Shared Nothing架構設計，支援儲存節點水平擴充，並且保留多項關聯式資料庫特性及既有功能。</p>
+                    <br/>
+                    <div class="fw600">
+                        1. 高乘載 (high load capacity)</br>
+                        2. 高容錯 (high fault tolerance)</br>
+                        3. 高效益 (high performance)</br>
+                        4. 易操作 (easy to operate)</br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="myCarousel" class="container-fluid">
+        <h1 class="black">
+            <center>
+                <strong>我們的顧客</strong>
+            </center>
+        </h1>
+        <br>
+        <br>
+        <br>
+        <div class="row slideanim" id="customer_fadein">
+            <div class="col-lg-3 mb20">
+                <div class="p20 animated" style="background:rgba(255, 255,255,0.9);height:350px;box-shadow: 0px 0px 12px 2px #b5b5b5;">
+                    <center>
+                        <img src="logo_mitaccomm.png">
+                    </center>
+                    <h3>
+                        <center>
+                            <strong class="text-dafault">新達電腦股份有限公司</strong>
+                        </center>
+                    </h3>
+                    <hr class="hr_w">
+                    <p class="gray">採用iServCloud提供軟硬體整合之解決方案，幫助產業快速建立私有雲、管控內部虛擬資源服務，降低IT部門安裝負擔，提升工作效率。</p>
+                </div>
+            </div>
+            <div class="col-lg-3 mb20">
+                <div class="p20 animated" style="background:rgba(255, 255,255,0.9);height:350px;box-shadow: 0px 0px 12px 2px #b5b5b5;">
+                    <center>
+                        <img src="logo_easpnet.jpg">
+                    </center>
+                    <h3>
+                        <center>
+                            <strong class="text-dafault">數位通國際網路股份有限公司</strong>
+                        </center>
+                    </h3>
+                    <hr class="hr_w">
+                    <p class="gray">使用iServCloud資源管理平台管理客戶虛擬資源，將申請程序化繁為簡，提升資源可用率。實績：成為我國政府「電腦軟體共同供應契約採購」服務提供商。</p>
+                </div>
+            </div>
+            <div class="col-lg-3 mb20">
+                <div class="p20 animated" style="background:rgba(255, 255,255,0.9);height:350px;box-shadow: 0px 0px 12px 2px #b5b5b5;">
+                    <center>
+                        <img src="logo_teema.jpg">
+                    </center>
+                    <h3>
+                        <center>
+                            <strong class="text-dafault">台灣區電機電子工業同業公會</strong>
+                        </center>
+                    </h3>
+                    <hr class="hr_w">
+                    <p class="gray">使用iServCloud管理平台，建立各式雲端服務，提供台灣、日本及中國會員使用，強化服務效能，增進會員滿意度，降低維運成本，創造最大利益。</p>
+                </div>
+            </div>
+            <div class="col-lg-3 mb20">
+                <div class="p20 animated" style="background:rgba(255, 255,255,0.9);height:350px;box-shadow: 0px 0px 12px 2px #b5b5b5;">
+                    <center>
+                        <img src="logo_isoftstone.png">
+                    </center>
+                    <h3>
+                        <center>
+                            <strong class="text-dafault">軟通動力信息技術(集團)有限公司</strong>
+                        </center>
+                    </h3>
+                    <hr class="hr_w">
+                    <p class="gray">使用iServCloud管理平台，建立各式雲端服務，提供台灣、日本及中國會員使用，強化服務效能，增進會員滿意度，降低維運成本，創造最大利益。</p>
+                </div>
+            </div>
+            <div class="col-lg-3 mb20">
+                <div class="p20 animated" style="background:rgba(255, 255,255,0.9);height:350px;box-shadow: 0px 0px 12px 2px #b5b5b5;">
+                    <h3>
+                        <center>科技服務大樓</center>
+                    </h3>
+                    <h3>
+                        <center>
+                            <strong class="text-dafault">CloudDC</strong>
+                        </center>
+                    </h3>
+                    <hr class="hr_w">
+                    <p class="gray">使用iServCloud管理平台，提升進駐之廠商虛擬資源服務，改善服務品質，降低IT部門人員配置，提高生產力。"</p>
+                </div>
+            </div>
+            <div class="col-lg-3 mb20">
+                <div class="p20 animated" style="background:rgba(255, 255,255,0.9);height:350px;box-shadow: 0px 0px 12px 2px #b5b5b5;">
+                    <center>
+                        <img src="logo_cablesoft.gif">
+                    </center>
+                    <h3>
+                        <center>
+                            <strong class="text-dafault">開博科技股份有限公司</strong>
+                        </center>
+                    </h3>
+                    <hr class="hr_w">
+                    <p class="gray">使用iServCloud管理平台，優化旗下產品Zoom Service，整合既有客戶的管理系統，縮減維運主機數量約達40%，提升管理效能，降低人力耗能。</p>
+                </div>
+            </div>
+            <div class="col-lg-3 mb20">
+                <div class="p20 animated" style="background:rgba(255, 255,255,0.9);height:350px;box-shadow: 0px 0px 12px 2px #b5b5b5;">
+                    <center>
+                        <img src="logo_01.png">
+                    </center>
+                    <h3>
+                        <center>
+                            <strong class="text-dafault">國家發展委員會檔案管理局</strong>
+                        </center>
+                    </h3>
+                    <hr class="hr_w">
+                    <p class="gray">使用iServCloud管理平台，優化旗下產品Zoom Service，整合既有客戶的管理系統，縮減維運主機數量約達40%，提升管理效能，降低人力耗能。</p>
+                </div>
+            </div>
+            <div class="col-lg-3 mb20">
+                <div class="p20 animated" style="background:rgba(255, 255,255,0.9);height:350px;box-shadow: 0px 0px 12px 2px #b5b5b5;">
+                    <center>
+                        <img src="logo_ylis.gif">
+                    </center>
+                    <h3>
+                        <center>
+                            <strong class="text-dafault">正源科技股份有限公司</strong>
+                        </center>
+                    </h3>
+                    <hr class="hr_w">
+                    <p class="gray">使用iServCloud管理平台，為裕隆集團建置私有雲，提升各部門營運效率並將剩餘資源做台元科技園區內供有雲服務，降低園區內中小企業IT成本。</p>
+                </div>
+            </div>
+        </div>
+        <!-- Indicators -->
+        <!-- <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#myCarousel" data-slide-to="5"></li>
+            <li data-target="#myCarousel" data-slide-to="6"></li>
+            <li data-target="#myCarousel" data-slide-to="7"></li>
+        </ol> -->
+
+        <!-- Wrapper for slides -->
+        <!-- <h1 class="black">
+            <strong>我們的顧客</strong>
+        </h1>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <h4>
+                    <img src="logo_mitaccomm.png">
+                    <br>新達電腦股份有限公司
+                    <br>
+                    <br>"採用iServCloud提供軟硬體整合之解決方案，幫助產業快速建立私有雲、
+                    <br>管控內部虛擬資源服務，降低IT部門安裝負擔，提升工作效率。"</h4>
+            </div>
+            <div class="item">
+                <h4>
+                    <img src="logo_easpnet.jpg">
+                    <br>數位通國際網路股份有限公司
+                    <br>
+                    <br>"使用iServCloud資源管理平台管理客戶虛擬資源，將申請程序化繁為簡，提升資源可用率。
+                    <br>實績：成為我國政府「電腦軟體共同供應契約採購」服務提供商。"</h4>
+            </div>
+            <div class="item">
+                <h4>
+                    <img src="logo_teema.jpg">
+                    <br>台灣區電機電子工業同業公會
+                    <br>
+                    <br>"使用iServCloud管理平台，建立各式雲端服務，提供台灣、日本及中國會員使用，
+                    <br>強化服務效能，增進會員滿意度，降低維運成本，創造最大利益。"</h4>
+            </div>
+            <div class="item">
+                <h4>
+                    <img src="logo_isoftstone.png">
+                    <br>軟通動力信息技術(集團)有限公司
+                    <br>
+                    <br>"使用iServCloud建置集團內部私有雲服務，提供超過600台虛擬機，供應旗下各子公司
+                    <br>進行專案開發測試及相關服務建置，提升產品開發效率，降低維運負擔，
+                    <br>加速產品上市時間(Time to Market)。"</h4>
+            </div>
+            <div class="item">
+                <h4>科技服務大樓 CloudDC
+                    <br>
+                    <br>"使用iServCloud管理平台，提升進駐之廠商虛擬資源服務，改善服務品質，
+                    <br>降低IT部門人員配置，提高生產力。"</h4>
+            </div>
+            <div class="item">
+                <h4>
+                    <img src="logo_cablesoft.gif">
+                    <br>開博科技股份有限公司
+                    <br>
+                    <br>"使用iServCloud管理平台，優化旗下產品Zoom Service，整合既有客戶的管理系統，
+                    <br>縮減維運主機數量約達40%，提升管理效能，降低人力耗能。"</h4>
+            </div>
+            <div class="item">
+                <h4>
+                    <img src="logo_01.png">
+                    <br>國家發展委員會檔案管理局
+                    <br>
+                    <br>"藉由iServCloud整合全國電子公文交換中心，降低百餘實體機器數量，
+                    <br>減省設備投資，簡化運作流程，提升管理效能。"</h4>
+            </div>
+            <div class="item">
+                <h4>
+                    <img src="logo_ylis.gif">
+                    <br>正源科技股份有限公司
+                    <br>
+                    <br>"使用iServCloud管理平台，為裕隆集團建置私有雲，提升各部門營運效率並將剩餘資源
+                    <br>做台元科技園區內供有雲服務，降低園區內中小企業IT成本。"</h4>
+            </div>
+        </div> -->
+
+        <!-- Left and right controls -->
+        <!-- <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a> -->
+
+        <div class="modal fade" id="nav_modal" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content  bg-dark">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-12 text-right fs30" data-dismiss="modal">&times;</div>
+                            <div class="col-lg-12">
+                                <br/>
+                            </div>
+                            <div class="col-lg-12 ">
+                                <button class="btn btn-block fs18">
+                                    <a href="#Solutions">
+                                        <i class="fa fa-lightbulb-o"></i> Solutions</a>
+                                </button>
+                                <button class="btn btn-block fs18">
+                                    <a href="#Services">
+                                        <i class="fa fa-compass"></i> Services</a>
+                                </button>
+                                <button class="btn btn-block fs18">
+                                    <a href="#DCDB">
+                                        <i class="fa fa-search"></i> iServDC&DB</a>
+                                </button>
+                                <button class="btn btn-block fs18">
+                                    <a href="#myCarousel">
+                                        <i class="fa fa-rocket"></i> Customers</a>
+                                </button>
+                                <button class="btn btn-block fs18">
+                                    <a href="#Contact">
+                                        <i class="fa fa-coffee"></i> Contact</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Footer -->
+    <footer id="Contact" class="text-center bg-info">
+        <div class="footer-above container">
+            <div class="row">
+                <div class="footer-col col-md-4">
+                    <h3>Technical Information</h3>
+                    <p>
+                        <a class="tech_info" href="http://openstack.org/" target='_blank'>OpenStack</a>
+                    </p>
+                    <p>
+                        <a class="tech_info" href="http://postgresql.org/" target='_blank'>PostgreSQL</a>
+                    </p>
+                </div>
+                <div class="footer-col col-md-4">
+                    <h3>Relative Links</h3>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="https://twitter.com/iservdb"><i class="fa fa-twitter text-muted fs30"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col col-md-4">
+                    <h3 style=" font-family:Microsoft JhengHei; text-transform: none">Further Information</h3>
+                    <p>contact@iServCloud.com</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <hr class="hr_w">
+        <br>
+        <div class="footer-below">
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    Copyright &copy; Digital Transformation Institute(DTI), Institute for Information Industry(III)
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+        </div>
+        <br>
     </footer>
 
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery-1.11.1.min.js"></script>
+    <script src="vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
+    <!-- LazyLineSVG Plugin -->
+    <script src="vendor/plugins/lazyline/jquery.lazylinepainter-1.5.0.js"></script>
+
+    <!-- Theme Javascript -->
+    <script src="assets/js/utility/utility.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+
+            "use strict";
+
+            // Init Theme Core    
+            Core.init();
+
+            $(".navbar a").on('click', function (event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+                    // Store hash
+                    var hash = this.hash;
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top - 48
+                    }, 900, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        // window.location.hash = hash;
+                    });
+                } // End if
+            });
+
+
+            $(window).scroll(function () {
+                $(".slideanim").each(function () {
+                    var pos = $(this).offset().top;
+                    var winTop = $(window).scrollTop();
+
+                    if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+
+            $("#nav_btn").click(function () {
+                $("#nav_modal").modal('show')
+            })
+
+            $("#nav_modal").find('button').click(function(){
+                var hash = $(this).find('a').attr('href')
+                $("#nav_modal").modal('hide')
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top - 48
+                }, 900)
+            })
+
+        });
+    </script>
 
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
